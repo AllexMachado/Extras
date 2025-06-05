@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocador</title>
+</head>
+<body>
+    <h1>Troque as casinhas</h1>
+    <p>Bairro:</p>
+    <p id="c1">Casa 1</p>
+    <p id="c2">Casa 2</p>
+    <p id="c3">Casa 3</p>
+    <p id="res"></p>
+    <input type="button" value="Trocar" onclick="troca()">
+
+    <script>
+        function troca() {
+            let c1 = document.getElementById('c1')
+            let c2 = document.getElementById('c2')
+            let c3 = document.getElementById('c3')
+            let res = document.getElementById('res')
+
+            if (c1 == c1) {
+                c1.innerHTML = `Casa 3`
+            }
+            if (c2 == c2) {
+                c2.innerHTML = `Casa 1`
+            }
+            if (c3 == c3) {
+                c3.innerHTML = `Casa 2`
+            }
+
+            res.innerHTML = `Você mudou as casinhas :D!`
+        }
+    </script>
+</body>
+</html>
