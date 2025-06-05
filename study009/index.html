@@ -3,9 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Controle de Gastos</title>
+    <script src="script.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Geneva, Tahoma, sans-serif;
+            background-color: white;
+        }
+
+        main{
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgb(8, 136, 255);
+            box-shadow: 0 2px 10px rgba(8, 136, 255, 0.192);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.5em;
+            padding: 5px 40px;
+            color: rgb(8, 136, 255);
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 2px;
+            border-radius: 5px;
+            border: 1px solid rgb(8, 136, 255);
+        }
+        select {
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(8, 136, 255);
+            color: white;
+            font-weight: bolder;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(0, 56, 109);
+        }
+
+        .item label {
+            display: grid;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0px;
+            border-radius: 5px;
+            border: 1px solid rgb(8, 136, 255);
+        }   
+
+        #destaque {
+            background-color: rgb(8, 136, 255);
+            color: white;
+            font-weight: bolder;
+        }
+    </style>
 </head>
 <body>
-    
+    <main class="container">
+        <h1>Controle de Gastos</h1>
+        <input type="text" name="gastos" id="gastos" required placeholder="Digite o valor do gasto">
+
+        <p id="escolha-label">
+            <select name="categorias" id="categorias" required>
+                    <option>Alimentação</option>
+                    <option>Transporte</option>
+                    <option>Lazer</option>
+                    <option>Outros</option>
+            </select>
+        </p>
+
+        <button id="add" onclick="adicionarGasto()">Adicionar</button>
+
+        <div class="item">
+            <label>Alimentação: R$ 0,00</label>
+            <label>Transporte: R$ 0,00</label>
+            <label>Lazer: R$ 0,00</label>
+            <label>Outros: R$ 0,00</label>
+            <label id="destaque">Total: R$ 0,00</label>
+        </div>
+    </main>
 </body>
 </html>
